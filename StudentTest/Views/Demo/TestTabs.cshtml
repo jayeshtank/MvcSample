@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "_Tabs";
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Personal Info</a></li>
+        <li><a href="#tabs-2">Education Details</a></li>
+        <li><a href="#tabs-3">Account Details</a></li>
+    </ul>
+    <div id="tabs-1">
+        @Html.Partial("_Tab1")
+    </div>
+    <div id="tabs-2">
+        @Html.Partial("_Tab2")
+    </div>
+    <div id="tabs-3">
+        @Html.Partial("_Tab2")
+    </div>
+</div>
+
+@section scripts
+{
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#tabs").tabs();
+        });
+    </script>
+}

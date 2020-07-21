@@ -1,0 +1,41 @@
+﻿@model List<StudentTest.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.ActionLink("Add","Create")
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Id</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.StudentId</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.MiddleName</td>
+                    <td>@item.LastName</td>
+                    <td>@Html.ActionLink("Edit", "Edit") |@Html.ActionLink("Delete", "Delete")</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5">
+                    <p style="color:red;">No records found.</p>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Student";
+}
+
+
+<h1>
+</h1>
+
+@section scripts{
+    @*<script>
+        function setName() {
+            var firstNAme = document.getElementById("txtFirstName");
+            document.getElementById("spn-firstname").innerHTML(firstNAme)
+        }
+    </script>*@
+    <script type="text/javascript">
+        $(function () {
+            $("#btnCallAjax").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/Demo/TestD",
+                    success: function (result) {
+                        console.log(result)
+                    },
+                    error: function (response) {
+                        alert("Javascipt Error");
+                    }
+                });
+            });
+        });
+    </script>
+}

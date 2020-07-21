@@ -1,0 +1,76 @@
+﻿@model StudentTest.Models.Student
+@using StudentTest.Models
+@{
+    ViewBag.Title = "Index";
+}
+@{ 
+
+    var departmentList = new List<Department>();
+    departmentList.Add(new Department
+    {
+        DepartmentId = 1,
+        ShortName="CE",
+        Name = "Computer Engineering"
+    });
+
+    departmentList.Add(new Department
+    {
+        DepartmentId = 2,
+        ShortName = "EE",
+        Name = "Electrical Engineering"
+    });
+
+}
+
+
+<h2>Create</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @*@Html.ValidationSummary(false, "", new { @class = "text-danger" })*@
+<div class="row">
+    <div class="col-md-12">
+        @Html.LabelFor(a => a.StudentId, new { @class = "label-mar" })
+        @Html.TextBoxFor(a => a.StudentId, new { @class = "min-width250" })
+    </div>
+
+    <div class="col-md-12">
+        @Html.LabelFor(a => a.FirstName, new { @class = "label-mar" })
+        @Html.TextBoxFor(a => a.FirstName, new { @class = "min-width250" })
+    </div>
+
+    <div class="col-md-12">
+        @Html.LabelFor(a => a.MiddleName, new { @class = "label-mar" })
+        @Html.TextBoxFor(a => a.MiddleName, new { @class = "min-width250" })
+    </div>
+
+    <div class="col-md-12">
+        @Html.LabelFor(a => a.LastName, new { @class = "label-mar" })
+        @Html.TextBoxFor(a => a.LastName, new { @class = "min-width250" })
+    </div>
+
+    <div class="col-md-12">
+        @Html.LabelFor(a => a.Gender, new { @class = "label-mar" })
+        @Html.RadioButtonFor(a => a.Gender, 1, new { @class = "" })
+        <span>Male</span>
+
+        @Html.RadioButtonFor(a => a.Gender, 2, new { @class = "" })
+        <span>Female</span>
+    </div>
+
+    <div class="col-md-12">
+        @Html.LabelFor(a => a.IsActive, new { @class = "label-mar" })
+        @Html.CheckBoxFor(a => a.IsActive)
+    </div>
+
+    <div class="col-md-12">
+        @Html.LabelFor(a => a.DepartmentId, new { @class = "label-mar" })
+        @Html.DropDownListFor(a => a.DepartmentId, new SelectList(departmentList, "DepartmentId", "Name"),"---Select ---",new { @style="width:250px;"})
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Submit
+    </button>
+</div>
+}
