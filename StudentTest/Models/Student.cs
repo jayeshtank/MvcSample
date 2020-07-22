@@ -28,8 +28,7 @@ namespace StudentTest.Models
         [Range(20,40,ErrorMessage = "Age should be between 20 to 40.")]
         [Display(Name = "Age")]
         public string Age { get; set; }
-
-
+        
         [Display(Name = "Student Email")]
         [EmailAddress(ErrorMessage ="Email Address is invalid.")]
         public string EmailAddress { get; set; }

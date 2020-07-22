@@ -80,16 +80,20 @@
 
         @Html.RadioButtonFor(a => a.Gender, 2, new { @class = "" })
         <span>Female</span>
+
+        @Html.ValidationMessageFor(a => a.Gender)
     </div>
 
     <div class="col-md-12">
         @Html.LabelFor(a => a.IsActive, new { @class = "label-mar" })
         @Html.CheckBoxFor(a => a.IsActive)
+        @Html.ValidationMessageFor(a => a.IsActive)
     </div>
 
     <div class="col-md-12">
         @Html.LabelFor(a => a.DepartmentId, new { @class = "label-mar" })
         @Html.DropDownListFor(a => a.DepartmentId, new SelectList(departmentList, "DepartmentId", "Name"), "---Select ---", new { @style = "width:250px;" })
+        @Html.ValidationMessageFor(a => a.DepartmentId)
     </div>
 
     <button type="submit" class="btn btn-primary">
