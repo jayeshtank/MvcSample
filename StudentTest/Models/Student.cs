@@ -21,8 +21,9 @@ namespace StudentTest.Models
 
         [Display(Name = "Last Name")]
         [Required(ErrorMessage = "Please enter Last Name")]
-        [MinLength(3, ErrorMessage = "First Name Should be minimum 3 chars.")]
-        [MaxLength(10, ErrorMessage = "First Name Should not exceed limit 10 chars.")]
+        [MinLength(3, ErrorMessage = "Last Name Should be minimum 3 chars.")]
+        [MaxLength(10, ErrorMessage = "Last Name Should not exceed limit 10 chars.")]
+        [RegularExpression("^[a-zA-Z0-9]*$", ErrorMessage = "Only Alphabets and Numbers allowed.")]
         public string LastName { get; set; }
 
         [Range(20,40,ErrorMessage = "Age should be between 20 to 40.")]
@@ -41,9 +42,11 @@ namespace StudentTest.Models
         public DateTime DateOfBirth { get; set; }
 
         [Display(Name = "Gender")]
+        [Required]
         public int Gender { get; set; }
 
         [Display(Name = "Department")]
+        [Required]
         public int DepartmentId { get; set; }
 
         [Display(Name = "Is Student Active")]
