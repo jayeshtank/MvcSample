@@ -24,6 +24,7 @@ namespace StudentTest.Controllers
         {
             var student = new Student();
             student.DepartmentId = 1;
+            student.Age = 18;
             student.IsActive = true;
 
             return View(student);
