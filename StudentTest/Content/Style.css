@@ -4,3 +4,7 @@
 .label-mar{
     margin:20px;
 }
+
+.field-validation-error{
+    color:red;
+}

@@ -33,10 +33,13 @@ namespace StudentTest.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Student student)
         {
-            var isInsert = StudentRepository.Insert(student);
-            if (isInsert)
+            if(ModelState.IsValid)
             {
-                return RedirectToAction("Index");
+                var isInsert = StudentRepository.Insert(student);
+                if (isInsert)
+                {
+                    return RedirectToAction("Index");
+                }
             }
             return View(student);
         }

@@ -6,17 +6,37 @@ namespace StudentTest.Models
     public class Student
     {
         [Display(Name = "Student ID")]
+        [Required(ErrorMessage = "Please enter Student Id")]
         public int? StudentId { get; set; }
 
         [Display(Name = "First Name")]
-        //[RegularExpression("^[a-zA-Z0-9]*$", ErrorMessage = "Only Alphabets and Numbers allowed.")]
+        [Required(ErrorMessage = "Please enter First Name")]
+        [MinLength(3, ErrorMessage = "First Name Should be minimum 3 chars.")]
+        [MaxLength(10,ErrorMessage ="First Name Should not exceed limit 10 chars.")]
+        [RegularExpression("^[a-zA-Z0-9]*$", ErrorMessage = "Only Alphabets and Numbers allowed.")]
         public string FirstName { get; set; }
 
         [Display(Name = "Middle Name")]
         public string MiddleName { get; set; }
 
         [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Please enter Last Name")]
+        [MinLength(3, ErrorMessage = "First Name Should be minimum 3 chars.")]
+        [MaxLength(10, ErrorMessage = "First Name Should not exceed limit 10 chars.")]
         public string LastName { get; set; }
+
+        [Range(20,40,ErrorMessage = "Age should be between 20 to 40.")]
+        [Display(Name = "Age")]
+        public string Age { get; set; }
+
+
+        [Display(Name = "Student Email")]
+        [EmailAddress(ErrorMessage ="Email Address is invalid.")]
+        public string EmailAddress { get; set; }
+
+        [Display(Name = "Student Phone")]
+        [Phone(ErrorMessage = "Phone number is invalid.")]
+        public string Phone { get; set; }
 
         [Display(Name = "Birth Date")]
         public DateTime DateOfBirth { get; set; }
