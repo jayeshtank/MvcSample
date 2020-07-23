@@ -1,9 +1,10 @@
 ﻿@model List<StudentTest.Models.Student>
+@using StudentTest.Models
 @{
     ViewBag.Title = "Index";
 }
 
-@Html.ActionLink("Add","Create")
+@Html.ActionLink("Add", "Create")
 <table class="table">
     <thead>
         <tr>
@@ -20,14 +21,14 @@
         {
             foreach (var item in Model)
             {
-        <tr>
-            <td>@item.StudentId</td>
-            <td>@item.FirstName</td>
-            <td>@item.MiddleName</td>
-            <td>@item.LastName</td>
-            <td>@item.EmailAddress</td>
-            <td>@Html.ActionLink("Edit", "Edit") |@Html.ActionLink("Delete", "Delete")</td>
-        </tr>
+                <tr>
+                    <td>@item.StudentId</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.MiddleName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.EmailAddress</td>
+                    <td>@Html.ActionLink("Edit", "Edit") |@Html.ActionLink("Delete", "Delete")</td>
+                </tr>
             }
         }
         else
@@ -40,4 +41,7 @@
         }
     </tbody>
 </table>
+
+
+
 

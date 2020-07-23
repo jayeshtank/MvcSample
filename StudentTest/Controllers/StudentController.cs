@@ -15,6 +15,22 @@ namespace StudentTest.Controllers
         public ActionResult Index()
         {
             var lst = StudentRepository.GetAll();
+
+            var departmentList = new List<Department>();
+            departmentList.Add(new Department
+            {
+                DepartmentId = 1,
+                ShortName = "CE",
+                Name = "Computer Engineering"
+            });
+            departmentList.Add(new Department
+            {
+                DepartmentId = 2,
+                ShortName = "EE",
+                Name = "Electrical Engineering"
+            });
+
+           
             return View(lst);
         }
 
@@ -34,7 +50,7 @@ namespace StudentTest.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Student student)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var isInsert = StudentRepository.Insert(student);
                 if (isInsert)

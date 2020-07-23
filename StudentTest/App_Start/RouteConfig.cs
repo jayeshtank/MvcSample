@@ -15,16 +15,21 @@ namespace StudentTest
 
             //routes.MapRoute(
             //   name: "route1",
-            //   url: "students",
-            //   defaults: new { controller = "Student", action = "GetStudentList", id = UrlParameter.Optional }
+            //   url: "slist",
+            //   defaults: new { controller = "Student", action = "Index", id = UrlParameter.Optional }
             //);
-            
+            //routes.MapRoute(
+            //   name: "route2",
+            //   url: "screate",
+            //   defaults: new { controller = "Student", action = "Create", id = UrlParameter.Optional }
+            //);
+
             //routes.MapRoute(
             //   name: "route2",
             //   url: "students/{action}/{id}",
             //   defaults: new { controller = "Student", action = "GetStudentList", id = UrlParameter.Optional }
             //);
-            
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
