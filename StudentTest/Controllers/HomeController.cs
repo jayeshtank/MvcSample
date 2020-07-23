@@ -30,10 +30,10 @@ namespace StudentTest.Controllers
             }
 
             //TempData.Keep("TempTestVar");
-            
+
             //if (ViewData["Test"] != null)
             //{
-            //    tmpViewData = (string)TempData["Test"];
+            //    tmpViewData = (string)ViewData["Test"];
             //}
             return View();
         }
