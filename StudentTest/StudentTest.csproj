@@ -126,13 +126,20 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="FilterClasses\MyLoggerAttribute.cs" />
+    <Compile Include="FilterClasses\MyTestAuthorizeAttribute.cs" />
+    <Compile Include="FilterClasses\MyTestErrorHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\TestAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,12 +186,14 @@
     <Content Include="Views\Demo\_Tab1.cshtml" />
     <Content Include="Views\Demo\_Tab2.cshtml" />
     <Content Include="Views\Demo\_Tab3.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Views\Shared\_University.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

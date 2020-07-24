@@ -1,24 +1,30 @@
-﻿
-using StudentTest.Models;
-using System.Collections;
-using System.Collections.Generic;
+﻿using StudentTest.FilterClasses;
+using StudentTest.Repository;
+using System;
 using System.Web.Mvc;
 
 namespace StudentTest.Controllers
 {
-    public class HomeController : Controller
-    {
+    //[HandleError]
+    //[MyTestErrorHandler]
+    //[MyLogger]
+    //[MyTestAuthorize]
 
+    //[MyLogger]
+    //[MyTestAuthorize]
+    public class HomeController : BaseController
+    {
+        //[AllowAnonymous]
         public ActionResult Index()
         {
-            ViewData["Test"] = "View Data Example";
-            ViewBag.Test2 = "This is view Bag Example";
-            TempData["TempTestVar"] = "This is temp data";
-            //TempData
+            var a = 0;
+            //var b = 0;
+            //var a = 10 / b;
+
             return View();
         }
 
-
+       
         public ActionResult About()
         {
             var tmpTempData = string.Empty;
@@ -48,5 +54,15 @@ namespace StudentTest.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        [OutputCache(Duration = 10)]
+        [AllowAnonymous]
+        public ActionResult GetStudentCounts()
+        {
+            var totalCount = StudentRepository.GetStudentCount();
+            return Json(new { TotalStudent = totalCount },JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

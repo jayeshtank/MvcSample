@@ -1,37 +1,29 @@
 ﻿@{
     ViewBag.Title = "Student";
 }
-@using StudentTest.Models
-
-<h1>
-    <h2>ViewData Example</h2>
-    @*<p>@ViewData["Test"]</p>*@
-
-    <h2>ViewBag Example</h2>
-    <p>@ViewBag.Test2</p>
-
-</h1>
+<button id="btnCallAjax">Call Ajax</button>
+<div>
+    <span>Total Students</span>
+    <span id="totalStudents"></span>
+</div>
 @section scripts{
-    @*<script>
-        function setName() {
-            var firstNAme = document.getElementById("txtFirstName");
-            document.getElementById("spn-firstname").innerHTML(firstNAme)
-        }
-    </script>*@
+
     <script type="text/javascript">
         $(function () {
-            $("#btnCallAjax").click(function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/Demo/TestD",
-                    success: function (result) {
-                        console.log(result)
-                    },
-                    error: function (response) {
-                        alert("Javascipt Error");
-                    }
-                });
-            });
+            init();
         });
+
+        function init() {
+            $.ajax({
+                type: "POST",
+                url: "/Home/GetStudentCounts",
+                success: function (result) {
+                    $("#totalStudents").text(result.TotalStudent);
+                },
+                error: function (response) {
+                    alert("Javascipt Error");
+                }
+            });
+        }
     </script>
 }

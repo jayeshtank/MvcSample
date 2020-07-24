@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace StudentTest.Controllers
 {
-    public class StudentController : Controller
+    public class StudentController : BaseController
     {
 
         [HttpGet]

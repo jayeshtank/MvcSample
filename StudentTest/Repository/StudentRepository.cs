@@ -30,5 +30,10 @@ namespace StudentTest.Repository
             return stuentsList;
         }
 
+        public static int GetStudentCount()
+        {
+            return stuentsList.Count;
+        }
+
     }
 }
