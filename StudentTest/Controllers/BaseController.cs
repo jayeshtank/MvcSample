@@ -8,7 +8,7 @@ using System.Web.Mvc;
 namespace StudentTest.Controllers
 {
     [MyTestErrorHandler]
-    [MyTestAuthorize]
+    //[MyTestAuthorize]
     public class BaseController : Controller
     {
     }

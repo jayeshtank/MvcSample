@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -22,7 +23,12 @@ namespace StudentTest
 
         public void Log(Exception ex)
         {
-            //File.WriteAllText(@"C:\Logs\a.txt", ex.Message + ex.StackTrace);
+            var sb = new StringBuilder();
+            sb.Append("Message : " + ex.Message);
+            sb.Append("\nStackTrace : " + ex.StackTrace);
+            sb.Append("\nInnerException : " + ex.InnerException);
+
+            //File.WriteAllText(@"C:\Logs\a.txt", sb.ToString());
             //Log Error to the file
         }
     }
