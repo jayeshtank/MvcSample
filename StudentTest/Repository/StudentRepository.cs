@@ -16,7 +16,12 @@ namespace StudentTest.Repository
         {
             try
             {
-                stuentsList.Add(student);
+                var tmp = new TblStudents();
+                tmp.Id = student.StudentId;
+                tmp.FName = student.FirstName;
+
+               // _Context.Add(tmp);
+               
                 return true;
             }
             catch
@@ -33,6 +38,47 @@ namespace StudentTest.Repository
         public static int GetStudentCount()
         {
             return stuentsList.Count;
+        }
+
+
+        private static void Init()
+        {
+            stuentsList.Add(new Student
+            {
+                FirstName = "Jayesh",
+                LastName = "Tank"
+            });
+
+            stuentsList.Add(new Student
+            {
+                FirstName = "Rahul",
+                LastName = "Dhokia"
+            });
+
+
+            stuentsList.Add(new Student
+            {
+                FirstName = "Rahul",
+                LastName = "Patel"
+            });
+
+            stuentsList.Add(new Student
+            {
+                FirstName = "Rohan",
+                LastName = "Patel"
+            });
+
+            stuentsList.Add(new Student
+            {
+                FirstName = "Parth",
+                LastName = "Mehta"
+            });
+
+            stuentsList.Add(new Student
+            {
+                FirstName = "Rohan",
+                LastName = "Trivedi"
+            });
         }
 
     }

@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StudentTest.Models
 {
+
     public class Student
     {
         [Display(Name = "Student ID")]
