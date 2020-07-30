@@ -10,6 +10,7 @@ namespace StudentTest.Repository
         static StudentRepository()
         {
             stuentsList = new List<Student>();
+            Init();
         }
         
         public static bool Insert(Student student)
@@ -45,37 +46,49 @@ namespace StudentTest.Repository
         {
             stuentsList.Add(new Student
             {
+                StudentId = 1,
                 FirstName = "Jayesh",
+                Age = 10,
                 LastName = "Tank"
             });
 
             stuentsList.Add(new Student
             {
+                StudentId = 5,
                 FirstName = "Rahul",
+                Age = 20,
                 LastName = "Dhokia"
             });
 
-
             stuentsList.Add(new Student
             {
+                StudentId = 2,
+                Age = 30,
                 FirstName = "Rahul",
                 LastName = "Patel"
             });
 
             stuentsList.Add(new Student
             {
+
+                StudentId = 4,
+                Age = 40,
                 FirstName = "Rohan",
                 LastName = "Patel"
             });
 
             stuentsList.Add(new Student
             {
+                StudentId = 6,
+                Age = 50,
                 FirstName = "Parth",
                 LastName = "Mehta"
             });
 
             stuentsList.Add(new Student
             {
+                StudentId = 6,
+                Age = 30,
                 FirstName = "Rohan",
                 LastName = "Trivedi"
             });
