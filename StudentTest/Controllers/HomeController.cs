@@ -35,7 +35,7 @@ namespace StudentTest.Controllers
                 tmpTempData = (string)TempData["TempTestVar"];
             }
 
-            //TempData.Keep("TempTestVar");
+            TempData.Keep("TempTestVar");
 
             //if (ViewData["Test"] != null)
             //{

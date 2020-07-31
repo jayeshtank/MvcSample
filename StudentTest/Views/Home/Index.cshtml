@@ -18,6 +18,7 @@
                 type: "POST",
                 url: "/Home/GetStudentCounts",
                 success: function (result) {
+                    console.log(result);
                     $("#totalStudents").text(result.TotalStudent);
                 },
                 error: function (response) {

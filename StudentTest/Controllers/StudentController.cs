@@ -50,6 +50,7 @@ namespace StudentTest.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Student student)
         {
+            
             if (ModelState.IsValid)
             {
                 var isInsert = StudentRepository.Insert(student);

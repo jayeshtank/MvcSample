@@ -51,7 +51,17 @@ namespace StudentTest.Models
         [Required]
         public int DepartmentId { get; set; }
 
+        public int CategoryId { get; set; }
+
         [Display(Name = "Is Student Active")]
         public bool IsActive { get; set; }
+    }
+
+    public class StudentDetails : Student
+    {
+        public string DepartmentName { get; set; }
+
+        public string CategoryName { get; set; }
+
     }
 }
