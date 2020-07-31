@@ -120,7 +120,7 @@
 //        studCatList.Add(new StudentCategory
 //        {
 //            CategoryId = 2,
-//            CategoryName = "Commerence"
+//            CategoryName = "Commerce"
 //        });
 //        studCatList.Add(new StudentCategory
 //        {
