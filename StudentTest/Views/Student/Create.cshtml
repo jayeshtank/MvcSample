@@ -3,13 +3,13 @@
 @{
     ViewBag.Title = "Index";
 }
-@{ 
+@{
 
     var departmentList = new List<Department>();
     departmentList.Add(new Department
     {
         DepartmentId = 1,
-        ShortName="CE",
+        ShortName = "CE",
         Name = "Computer Engineering"
     });
     departmentList.Add(new Department
@@ -28,74 +28,96 @@
 
     @*@Html.ValidationSummary(false, "", new { @class = "text-danger" })*@
 
-<div class="row">
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.StudentId, new { @class = "label-mar" })
-        @Html.TextBoxFor(a => a.StudentId, new { @class = "min-width250" })
-        @Html.ValidationMessageFor(a => a.StudentId)
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(a => a.StudentId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(a => a.StudentId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.StudentId)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(a => a.FirstName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.FirstName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.MiddleName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(a => a.MiddleName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.MiddleName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(a => a.LastName, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(a => a.LastName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.LastName)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(a => a.Age, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(a => a.Age, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Age)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(a => a.EmailAddress, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(a => a.EmailAddress, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.EmailAddress)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Phone, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(a => a.Phone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.Phone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.Gender, new { @class = "control-label col-md-2" })
+            <div class="radio-inline">
+                <label style="width:70px;">
+                    @Html.RadioButtonFor(a => a.Gender, 1, new { @class = "radio" })
+                    <span>Male</span>
+                </label>
+                <label>
+                    @Html.RadioButtonFor(a => a.Gender, 2, new { @class = "radio" })
+                    <span>Female</span>
+                </label>
+            </div>
+            @Html.ValidationMessageFor(a => a.Gender)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.IsActive, new { @class = "control-label col-md-2" })
+            <div class="radio-inline">
+                <label style="width:70px;">
+                    @Html.CheckBoxFor(a => a.IsActive, new { @class = "" })
+                </label>
+            </div>
+            @Html.ValidationMessageFor(a => a.IsActive)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(a => a.DepartmentId, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(a => a.DepartmentId, new SelectList(departmentList, "DepartmentId", "Name"), "---Select ---", new { @style = "width:250px;", @class = "form-control" })
+                @Html.ValidationMessageFor(a => a.DepartmentId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </div>
     </div>
-
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.FirstName, new { @class = "label-mar" })
-        @Html.TextBoxFor(a => a.FirstName, new { @class = "min-width250" })
-        @Html.ValidationMessageFor(a => a.FirstName)
-    </div>
-
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.MiddleName, new { @class = "label-mar" })
-        @Html.TextBoxFor(a => a.MiddleName, new { @class = "min-width250" })
-        @Html.ValidationMessageFor(a => a.MiddleName)
-    </div>
-
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.LastName, new { @class = "label-mar" })
-        @Html.TextBoxFor(a => a.LastName, new { @class = "min-width250" })
-        @Html.ValidationMessageFor(a => a.LastName)
-    </div>
-
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.Age, new { @class = "label-mar" })
-        @Html.TextBoxFor(a => a.Age, new { @class = "min-width250" })
-        @Html.ValidationMessageFor(a => a.Age)
-    </div>
-
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.EmailAddress, new { @class = "label-mar" })
-        @Html.TextBoxFor(a => a.EmailAddress, new { @class = "min-width250" })
-        @Html.ValidationMessageFor(a => a.EmailAddress)
-    </div>
-
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.Phone, new { @class = "label-mar" })
-        @Html.TextBoxFor(a => a.Phone, new { @class = "min-width250" })
-        @Html.ValidationMessageFor(a => a.Phone)
-    </div>
-
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.Gender, new { @class = "label-mar" })
-        @Html.RadioButtonFor(a => a.Gender, 1, new { @class = "" })
-        <span>Male</span>
-
-        @Html.RadioButtonFor(a => a.Gender, 2, new { @class = "" })
-        <span>Female</span>
-
-        @Html.ValidationMessageFor(a => a.Gender)
-    </div>
-
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.IsActive, new { @class = "label-mar" })
-        @Html.CheckBoxFor(a => a.IsActive)
-        @Html.ValidationMessageFor(a => a.IsActive)
-    </div>
-
-    <div class="col-md-12">
-        @Html.LabelFor(a => a.DepartmentId, new { @class = "label-mar" })
-        @Html.DropDownListFor(a => a.DepartmentId, new SelectList(departmentList, "DepartmentId", "Name"), "---Select ---", new { @style = "width:250px;" })
-        @Html.ValidationMessageFor(a => a.DepartmentId)
-    </div>
-
-    <button type="submit" class="btn btn-primary">
-        Submit
-    </button>
-</div>
 }

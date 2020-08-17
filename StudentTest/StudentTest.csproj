@@ -191,6 +191,7 @@
     <Content Include="Views\Demo\_Tab2.cshtml" />
     <Content Include="Views\Demo\_Tab3.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Demo\Index.cshtml" />
     <None Include="Views\Shared\_University.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
