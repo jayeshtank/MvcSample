@@ -140,14 +140,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Department.cs" />
-    <Compile Include="Models\StudentCategory.cs" />
-    <Compile Include="Models\TblStudents.cs" />
-    <Compile Include="Models\UserLogin.cs" />
-    <Compile Include="Models\Student.cs" />
     <Compile Include="Models\TestAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\StudentRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -212,6 +206,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudentApp.Business\StudentApp.Business.csproj">
+      <Project>{5612f90f-ac39-4d45-bf13-a76bfe1e1608}</Project>
+      <Name>StudentApp.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentApp.Model\StudentApp.Model.csproj">
+      <Project>{2bc2e78f-051a-4317-8619-3ae71de2c861}</Project>
+      <Name>StudentApp.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

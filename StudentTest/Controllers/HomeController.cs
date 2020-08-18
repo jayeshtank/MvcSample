@@ -1,7 +1,4 @@
-﻿using StudentTest.FilterClasses;
-using StudentTest.Repository;
-using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace StudentTest.Controllers
 {
@@ -17,10 +14,6 @@ namespace StudentTest.Controllers
         //[AllowAnonymous]
         public ActionResult Index()
         {
-            var a = 0;
-            //var b = 0;
-            //var a = 10 / b;
-
             return View();
         }
 
@@ -60,7 +53,7 @@ namespace StudentTest.Controllers
         [AllowAnonymous]
         public ActionResult GetStudentCounts()
         {
-            var totalCount = StudentRepository.GetStudentCount();
+            var totalCount = 10;//StudentRepository.GetStudentCount();
             return Json(new { TotalStudent = totalCount },JsonRequestBehavior.AllowGet);
         }
 

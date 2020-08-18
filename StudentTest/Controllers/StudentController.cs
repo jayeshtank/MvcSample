@@ -1,20 +1,24 @@
-﻿using StudentTest.Models;
-using StudentTest.Repository;
-using System;
+﻿using StudentApp.Business;
+using StudentApp.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace StudentTest.Controllers
 {
     public class StudentController : BaseController
     {
+        private StudentManager _studentManager;
+
+        public StudentController()
+        {
+            _studentManager = new StudentManager();
+        }
+
 
         [HttpGet]
         public ActionResult Index()
         {
-            var lst = StudentRepository.GetAll();
+            var lst = _studentManager.GetAllStudent();
 
             var departmentList = new List<Department>();
             departmentList.Add(new Department
@@ -38,7 +42,7 @@ namespace StudentTest.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            var student = new Student();
+            var student = new StudentViewModel();
             student.DepartmentId = 1;
             student.Age = 18;
             student.IsActive = true;
@@ -48,12 +52,12 @@ namespace StudentTest.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Student student)
+        public ActionResult Create(StudentViewModel student)
         {
             
             if (ModelState.IsValid)
             {
-                var isInsert = StudentRepository.Insert(student);
+                var isInsert = _studentManager.InsertStudent(student);
                 if (isInsert)
                 {
                     return RedirectToAction("Index");

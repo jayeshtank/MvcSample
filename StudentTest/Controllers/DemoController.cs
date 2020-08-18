@@ -76,21 +76,21 @@ namespace StudentTest.Controllers
 
         public ActionResult TestJ()
         {
-            var lstStudent = new List<Student>();
-            lstStudent.Add(new Student
-            {
-                StudentId = 1,
-                FirstName = "Jayesh",
-                LastName = "Tank"
-            });
+            //var lstStudent = new List<Student>();
+            //lstStudent.Add(new Student
+            //{
+            //    StudentId = 1,
+            //    FirstName = "Jayesh",
+            //    LastName = "Tank"
+            //});
 
-            lstStudent.Add(new Student
-            {
-                StudentId = 2,
-                FirstName = "Rahul",
-                LastName = "Dhokia"
-            });
-            return Json(lstStudent, JsonRequestBehavior.AllowGet);
+            //lstStudent.Add(new Student
+            //{
+            //    StudentId = 2,
+            //    FirstName = "Rahul",
+            //    LastName = "Dhokia"
+            //});
+            return Json(null, JsonRequestBehavior.AllowGet);
         }
 
         public RedirectResult TestK()
