@@ -23,8 +23,9 @@ namespace StudentApp.DataAccess
                 //tmp.Student_FName = student.FirstName;
                 //tmp.Student_FName = student.FirstName;
 
-                //DbContext.Add<Student>(tmp);
-
+                //var northwind = new NorthwindEntities();
+                //northwind.Students.Add(tmp);
+                //northwind.SaveChanges();
                 return true;
             }
             catch

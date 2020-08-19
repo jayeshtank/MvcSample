@@ -54,7 +54,6 @@ namespace StudentTest.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(StudentViewModel student)
         {
-            
             if (ModelState.IsValid)
             {
                 var isInsert = _studentManager.InsertStudent(student);
